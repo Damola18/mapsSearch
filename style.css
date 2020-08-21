@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap');
+body{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Recursive" , sans-serif;
+}
+form{
+    align-items: center;
+    justify-content: center;
+    margin:20px 40px;
+    outline:none;
+}
+form #inputText{
+    border-radius:5px;
+    outline:none;
+    height:30px;
+}
+button{
+    background:transparent;
+    color:black;
+    font-weight:bold;
+    height:25px;    
+    border-radius:10px;
+    border: 1px solid yellow;
+    cursor:pointer;
+}
+#map{
+    width:70%;
+    height:70%;
+    background:rgb(236, 231, 231);
+    margin:35px;
+}
