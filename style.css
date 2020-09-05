@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap');
-body{
+#map {
+    height: 70%;
+  }
+
+  html,
+  body {
+    height: 80%;
+    margin: 25px;
+    padding: 0;
+  }
+
+  #floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
+  }
+/* body{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -30,4 +54,4 @@ button{
     height:70%;
     background:rgb(236, 231, 231);
     margin:35px;
-}
+} */
