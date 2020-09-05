@@ -2,6 +2,7 @@
 // const defaultMap = document.getElementById('map');
 // const address = document.getElementById('address').value;
 // var latLng =  {lat:7.3775, lng:3.94709};
+
 function initMap(){
     const map = new google.maps.Map(document.getElementById('#map'), {
         zoom: 10,

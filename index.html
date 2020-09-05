@@ -1,10 +1,12 @@
-<html lang="en">
+<!-- <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geocoding API</title>
-    <script src="map.js"></script>
-    <script
+    <script src="map.js"></script> -->
+    <!--AXIOS CDN LINK -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <!-- <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeWuP0syCDhRGde_WvGGLsD4dn6R2z53w
       &callback=initMap&libraries=&v=weekly" defer>
     </script>
@@ -12,37 +14,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script>
+    
+  </script>
     <form id="input">
         <label for="input">Location</label><br>
-        <input type="search" placeholder="Enter city" id="address" value="Lagos">
+        <input type="search" placeholder="Enter city" id="address" value="Lagos"> -->
         <!-- <input id="submit" type="button" value="Geocode"> -->
-        <button type="submit" id="searchButton" value="Searchs">Search</button>
+        <!-- <button type="submit" id="searchButton" value="Searchs">Search</button>
     </form>
     <div id="map">
     </div>
 </body>
-</html>
-<!-- <!DOCTYPE html>
+</html> -->
+<!DOCTYPE html>
 <html>
   <head>
+    <!-- <div class="col-md-2 col-sm-2 col-xs-2">
+      <p><button class="btn btn-primary btn-sm" id="get-weather-btn"><span>Get Weather</span></button></p>
+    </div>
+    <div class="panel-body">
+      <p>Enter address: <input id="addresses" type="text"></p>
+      <p>Lat/Long: <input  id="location-lat-long" type="text" > </p>
+      <p>Weather: <textarea id="weather" class="form-control"></textarea></p>
+    </div> -->
+
     <title>Geocoding Service</title>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ-nh0Tvu3Ds4z1cXIWqKiTSdaRnYiTJc
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeWuP0syCDhRGde_WvGGLsD4dn6R2z53w
       &callback=initMap&libraries=&v=weekly"
       defer
     ></script>
-    <style type="text/css">
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
+    <link rel="stylesheet" href="style.css">
+    <!-- <style type="text/css">
       #map {
-        height: 100%;
+        height: 70%;
       }
 
-      /* Optional: Makes the sample page fill the window. */
       html,
       body {
         height: 100%;
-        margin: 0;
+        margin: 25px;
         padding: 0;
       }
 
@@ -59,18 +71,17 @@
         line-height: 30px;
         padding-left: 10px;
       }
-    </style>
+    </style> -->
     <script>
-      "use strict";
-
+      const mapOptions = {
+        zoom:8,
+        center:{
+          lat:7.3775,
+          lng:3.94709
+        }
+      };
       function initMap() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 8,
-          center: {
-            lat: -34.397,
-            lng: 150.644
-          }
-        });
+        const map = new google.maps.Map(document.getElementById("map"), mapOptions);
         const geocoder = new google.maps.Geocoder();
         document.getElementById("submit").addEventListener("click", () => {
           geocodeAddress(geocoder, map);
@@ -81,19 +92,17 @@
         const address = document.getElementById("address").value;
         geocoder.geocode(
           {
-            address: address
+            'address': address
           },
           (results, status) => {
-            if (status === "OK") {
+            if(status === "OK") {
               resultsMap.setCenter(results[0].geometry.location);
               new google.maps.Marker({
                 map: resultsMap,
                 position: results[0].geometry.location
               });
             } else {
-              alert(
-                "Geocode was not successful for the following reason: " + status
-              );
+              alert("Geocode was not successful for the following reason: " + status);
             }
           }
         );
@@ -102,9 +111,9 @@
   </head>
   <body>
     <div id="floating-panel">
-      <input id="address" type="textbox" value="Sydney, NSW" />
+      <input id="address" type="textbox"/>
       <input id="submit" type="button" value="Geocode" />
     </div>
     <div id="map"></div>
   </body>
-</html> -->
+</html>
